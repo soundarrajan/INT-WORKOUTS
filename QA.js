@@ -191,7 +191,7 @@ console.log("Hello"+ "78");
   Boolean([])
 //true
 Boolean('')
-//false
+//false/
 Boolean({})
 //true
 

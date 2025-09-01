@@ -1,3 +1,18 @@
+//palindrome
+const name = 'tenets';
+function palindrome(name){
+    //const newval = name.split('').reverse().join('');
+    let reversed='';
+    for(i=name.length-1;i>=0;i--){
+        reversed += name[i];
+    }
+    console.log(reversed);
+   // return newval == name ? 'it palindrome' : 'not palindrome';
+}
+console.log(palindrome(name));
+
+///////////////////////////////////////////////////////////
+
 var b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for (let i = 0; i < 10; i++) 
 {
@@ -29,6 +44,17 @@ runFunc()
 
 // i/p: [3,2,1]
 // o/p: [2,3,6]
+
+function productExceptSelf(nums) {
+    const totalProduct = nums.reduce((acc, num) => acc * num, 1);
+    //const zeroCount = nums.filter(num => num === 0).length;
+        return nums.map(num => totalProduct / num);
+
+}
+
+// Example usage:
+const nums = [1, 2, 3, 4];
+console.log(productExceptSelf(nums)); // Output: [24, 12, 8, 6]
 
 /////////////////////////////////////////////
 
@@ -401,4 +427,57 @@ for(let item in arrayss){
 for(let item of arrayss){
     console.log(item) //1 2 3 4
 }
+/////////////////////////////////////////////////
+//call , apply ,bind.
 
+//sleeep function
+
+async function test(){
+    console.log('1');
+    await sleep(5000);
+    console.log(3);
+}
+
+function sleep(delay){
+    return new Promise( resolve => setTimeout(resolve,delay));
+}
+
+test();
+//////////////////////////////////
+//find duplicate in array
+
+// to get dup val
+const arrayx = [1,2,3,1,2,4,5,6,7,8,5,9,8,4,3];
+const sorted = arrayx.sort();
+// console.log(sorted);
+
+var ss = sorted.filter((item,i) =>{
+    return item == sorted[i+1]
+});
+console.log(ss);
+
+
+// to get values w/o dup
+var ss = arrayx.reduce((acc,curr) =>{
+    if(!acc.includes(curr)){
+        acc.push(curr);
+    }
+    return acc;
+},[])
+console.log(ss);
+
+// to get unique and duplicate values
+var sss = arrays.reduce((acc,value) =>{
+    acc[value] = (acc[value] || 0)+1;
+    return acc
+    // if(acc[value] >= 2){
+    //     dup.push(acc[value]);
+    // }
+},{});
+console.log(sss);
+const dup = Object.keys(sss).filter((key) => sss[key] >1)
+
+
+
+console.log(dup);
+////////////////////////////////

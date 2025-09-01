@@ -638,3 +638,30 @@ fetch('https://api.example.com/data.txt')
 
 // let run1 = new test();
 // run1.testMethod();
+////////////////////////////////////////////////////////////////////////
+/*
+
+| Feature      | `.forEach()`                          | `.map()`                        |
+| ------------ | ------------------------------------- | ------------------------------- |
+| Return value | `undefined`                           | New array                       |
+| Use case     | Side effects (logging, mutating vars) | Data transformation             |
+| Chainable    | ❌ Not chainable                       | ✅ Chainable (`.map().filter()`) |
+| Performance  | Slightly faster (no new array alloc)  | Slight overhead (new array)     |
+
+const nums = [1, 2, 3];
+
+// forEach → just side effects
+nums.forEach(n => console.log(n * 2)); 
+// Logs: 2, 4, 6
+// Returns: undefined
+
+// map → creates new array
+const doubled = nums.map(n => n * 2);
+console.log(doubled); // [2, 4, 6]
+
+
+
+
+
+
+*/
